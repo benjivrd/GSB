@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GSB", "GSB\GSB.vbproj", "{0F819441-45EC-4A0D-8E68-DA860B2211D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSB", "GSB\GSB.csproj", "{962C6C1F-DB99-4708-9F22-34D5342A493E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0F819441-45EC-4A0D-8E68-DA860B2211D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F819441-45EC-4A0D-8E68-DA860B2211D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F819441-45EC-4A0D-8E68-DA860B2211D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F819441-45EC-4A0D-8E68-DA860B2211D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{962C6C1F-DB99-4708-9F22-34D5342A493E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{962C6C1F-DB99-4708-9F22-34D5342A493E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{962C6C1F-DB99-4708-9F22-34D5342A493E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{962C6C1F-DB99-4708-9F22-34D5342A493E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
