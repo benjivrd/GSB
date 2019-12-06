@@ -37,15 +37,22 @@ namespace GSB
 
         public DataTable connexionEmploye(string login, string mdp)
         {
-            String req = "select prenom, nom, service from employe E inner join personne P on E.id_personne = P.id where login=@leLogin and mdp=@leMdp";
-            this.cde = new SqlCommand(req, cn);
-            this.cde.Parameters.Add("@leLogin", SqlDbType.VarChar).Value = login;
-            this.cde.Parameters.Add("@leMdp", SqlDbType.VarChar).Value = mdp;
-            da = new SqlDataAdapter();
-            da.SelectCommand = this.cde;
-            dt = new DataTable();
-            da.Fill(dt);
-            return dt;
+            try
+            {
+                String req = "select prenom, nom, service, poste from employe E inner join personne P on E.id_personne = P.id where login=@leLogin and mdp=@leMdp";
+                this.cde = new SqlCommand(req, cn);
+                this.cde.Parameters.Add("@leLogin", SqlDbType.VarChar).Value = login;
+                this.cde.Parameters.Add("@leMdp", SqlDbType.VarChar).Value = mdp;
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [connexionEmploye] \n" + ex.Message);
+            }
         }
     }
 }
