@@ -30,12 +30,14 @@
         {
             this.btn_connexion = new System.Windows.Forms.Button();
             this.tb_login = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_mdp = new System.Windows.Forms.TextBox();
+            this.lb_login = new System.Windows.Forms.Label();
+            this.lb_mdp = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_connexion
             // 
-            this.btn_connexion.Location = new System.Drawing.Point(196, 342);
+            this.btn_connexion.Location = new System.Drawing.Point(201, 294);
             this.btn_connexion.Name = "btn_connexion";
             this.btn_connexion.Size = new System.Drawing.Size(75, 23);
             this.btn_connexion.TabIndex = 0;
@@ -45,30 +47,51 @@
             // 
             // tb_login
             // 
-            this.tb_login.Location = new System.Drawing.Point(185, 252);
+            this.tb_login.Location = new System.Drawing.Point(221, 207);
             this.tb_login.Name = "tb_login";
             this.tb_login.Size = new System.Drawing.Size(100, 20);
             this.tb_login.TabIndex = 1;
             // 
-            // textBox2
+            // tb_mdp
             // 
-            this.textBox2.Location = new System.Drawing.Point(185, 288);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.tb_mdp.Location = new System.Drawing.Point(221, 243);
+            this.tb_mdp.Name = "tb_mdp";
+            this.tb_mdp.Size = new System.Drawing.Size(100, 20);
+            this.tb_mdp.TabIndex = 2;
+            // 
+            // lb_login
+            // 
+            this.lb_login.AutoSize = true;
+            this.lb_login.Location = new System.Drawing.Point(146, 210);
+            this.lb_login.Name = "lb_login";
+            this.lb_login.Size = new System.Drawing.Size(62, 13);
+            this.lb_login.TabIndex = 3;
+            this.lb_login.Text = "Identifiant : ";
+            // 
+            // lb_mdp
+            // 
+            this.lb_mdp.AutoSize = true;
+            this.lb_mdp.Location = new System.Drawing.Point(146, 246);
+            this.lb_mdp.Name = "lb_mdp";
+            this.lb_mdp.Size = new System.Drawing.Size(77, 13);
+            this.lb_mdp.TabIndex = 4;
+            this.lb_mdp.Text = "Mot de passe :";
             // 
             // connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 512);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.lb_mdp);
+            this.Controls.Add(this.lb_login);
+            this.Controls.Add(this.tb_mdp);
             this.Controls.Add(this.tb_login);
             this.Controls.Add(this.btn_connexion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "connexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.connexion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,7 +101,9 @@
 
         private System.Windows.Forms.Button btn_connexion;
         private System.Windows.Forms.TextBox tb_login;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_mdp;
+        private System.Windows.Forms.Label lb_login;
+        private System.Windows.Forms.Label lb_mdp;
     }
 }
 

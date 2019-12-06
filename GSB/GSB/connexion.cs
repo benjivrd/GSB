@@ -18,9 +18,18 @@ namespace GSB
             InitializeComponent();
         }
 
+        internal BDD bdd;
+        private DataTable dt = new DataTable();
+
+        private void connexion_Load(object sender, EventArgs e)
+        {
+            bdd = new BDD();
+        }
+
         private void btn_connexion_Click(object sender, EventArgs e)
         {
-
+            dt = bdd.connexionEmploye(this.tb_login.Text, this.tb_mdp.Text);
+            btn_connexion.Text = dt.Rows[0][1].ToString(); 
         }
     }
 }
