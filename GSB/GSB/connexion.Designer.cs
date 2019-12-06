@@ -33,11 +33,15 @@
             this.tb_mdp = new System.Windows.Forms.TextBox();
             this.lb_login = new System.Windows.Forms.Label();
             this.lb_mdp = new System.Windows.Forms.Label();
+            this.lb_erreurConnexion = new System.Windows.Forms.Label();
+            this.btn_mission1 = new System.Windows.Forms.Button();
+            this.btn_mission2 = new System.Windows.Forms.Button();
+            this.btn_mission3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_connexion
             // 
-            this.btn_connexion.Location = new System.Drawing.Point(201, 294);
+            this.btn_connexion.Location = new System.Drawing.Point(198, 334);
             this.btn_connexion.Name = "btn_connexion";
             this.btn_connexion.Size = new System.Drawing.Size(75, 23);
             this.btn_connexion.TabIndex = 0;
@@ -77,11 +81,54 @@
             this.lb_mdp.TabIndex = 4;
             this.lb_mdp.Text = "Mot de passe :";
             // 
+            // lb_erreurConnexion
+            // 
+            this.lb_erreurConnexion.AutoSize = true;
+            this.lb_erreurConnexion.Location = new System.Drawing.Point(227, 297);
+            this.lb_erreurConnexion.Name = "lb_erreurConnexion";
+            this.lb_erreurConnexion.Size = new System.Drawing.Size(19, 13);
+            this.lb_erreurConnexion.TabIndex = 5;
+            this.lb_erreurConnexion.Text = "__";
+            // 
+            // btn_mission1
+            // 
+            this.btn_mission1.Location = new System.Drawing.Point(124, 104);
+            this.btn_mission1.Name = "btn_mission1";
+            this.btn_mission1.Size = new System.Drawing.Size(75, 23);
+            this.btn_mission1.TabIndex = 6;
+            this.btn_mission1.Text = "Mission 1";
+            this.btn_mission1.UseVisualStyleBackColor = true;
+            this.btn_mission1.Click += new System.EventHandler(this.btn_mission1_Click);
+            // 
+            // btn_mission2
+            // 
+            this.btn_mission2.Location = new System.Drawing.Point(205, 104);
+            this.btn_mission2.Name = "btn_mission2";
+            this.btn_mission2.Size = new System.Drawing.Size(75, 23);
+            this.btn_mission2.TabIndex = 7;
+            this.btn_mission2.Text = "Mission 2";
+            this.btn_mission2.UseVisualStyleBackColor = true;
+            this.btn_mission2.Click += new System.EventHandler(this.btn_mission2_Click);
+            // 
+            // btn_mission3
+            // 
+            this.btn_mission3.Location = new System.Drawing.Point(286, 104);
+            this.btn_mission3.Name = "btn_mission3";
+            this.btn_mission3.Size = new System.Drawing.Size(75, 23);
+            this.btn_mission3.TabIndex = 8;
+            this.btn_mission3.Text = "Mission 3";
+            this.btn_mission3.UseVisualStyleBackColor = true;
+            this.btn_mission3.Click += new System.EventHandler(this.btn_mission3_Click);
+            // 
             // connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 512);
+            this.Controls.Add(this.btn_mission3);
+            this.Controls.Add(this.btn_mission2);
+            this.Controls.Add(this.btn_mission1);
+            this.Controls.Add(this.lb_erreurConnexion);
             this.Controls.Add(this.lb_mdp);
             this.Controls.Add(this.lb_login);
             this.Controls.Add(this.tb_mdp);
@@ -104,6 +151,10 @@
         private System.Windows.Forms.TextBox tb_mdp;
         private System.Windows.Forms.Label lb_login;
         private System.Windows.Forms.Label lb_mdp;
+        private System.Windows.Forms.Label lb_erreurConnexion;
+        private System.Windows.Forms.Button btn_mission1;
+        private System.Windows.Forms.Button btn_mission2;
+        private System.Windows.Forms.Button btn_mission3;
     }
 }
 
