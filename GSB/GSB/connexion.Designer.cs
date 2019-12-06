@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_connexion = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_login = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -43,12 +43,12 @@
             this.btn_connexion.UseVisualStyleBackColor = true;
             this.btn_connexion.Click += new System.EventHandler(this.btn_connexion_Click);
             // 
-            // textBox1
+            // tb_login
             // 
-            this.textBox1.Location = new System.Drawing.Point(185, 252);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.tb_login.Location = new System.Drawing.Point(185, 252);
+            this.tb_login.Name = "tb_login";
+            this.tb_login.Size = new System.Drawing.Size(100, 20);
+            this.tb_login.TabIndex = 1;
             // 
             // textBox2
             // 
@@ -63,7 +63,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 512);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_login);
             this.Controls.Add(this.btn_connexion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "connexion";
@@ -77,7 +77,7 @@
         #endregion
 
         private System.Windows.Forms.Button btn_connexion;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_login;
         private System.Windows.Forms.TextBox textBox2;
     }
 }
