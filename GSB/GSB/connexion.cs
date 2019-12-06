@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace GSB
 {
@@ -15,6 +16,11 @@ namespace GSB
         public connexion()
         {
             InitializeComponent();
+        }
+
+        private void btn_connexion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

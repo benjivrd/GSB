@@ -1,0 +1,33 @@
+Classe
+lesVariables
+form
+
+for/if(condition){
+	...
+}
+
+fonction 
+{
+	...
+}
+
+
+Une occurence de x :
+
+function(x);
+
+Plusieurs occurences de x :
+
+var 1 = x;
+function1(var 1);
+function2(var 1);
+
+TextBox : tb_
+Bouton : btn_
+Label : lb_
+DataGridView : dgv_
+CheckBox : ckb_
+ComboBox : cb_
+Panel : pnl_
+PictureBox : pb_
+RadioButton : rb_

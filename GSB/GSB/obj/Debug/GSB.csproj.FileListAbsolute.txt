@@ -1,0 +1,9 @@
+F:\BTS 2\SLAM 3 - Tormento\Projet Campagne de sensibilisation de GSB\repository\GSB\GSB\bin\Debug\GSB.exe.config
+F:\BTS 2\SLAM 3 - Tormento\Projet Campagne de sensibilisation de GSB\repository\GSB\GSB\bin\Debug\GSB.exe
+F:\BTS 2\SLAM 3 - Tormento\Projet Campagne de sensibilisation de GSB\repository\GSB\GSB\bin\Debug\GSB.pdb
+F:\BTS 2\SLAM 3 - Tormento\Projet Campagne de sensibilisation de GSB\repository\GSB\GSB\obj\Debug\GSB.csprojResolveAssemblyReference.cache
+F:\BTS 2\SLAM 3 - Tormento\Projet Campagne de sensibilisation de GSB\repository\GSB\GSB\obj\Debug\GSB.connexion.resources
+F:\BTS 2\SLAM 3 - Tormento\Projet Campagne de sensibilisation de GSB\repository\GSB\GSB\obj\Debug\GSB.Properties.Resources.resources
+F:\BTS 2\SLAM 3 - Tormento\Projet Campagne de sensibilisation de GSB\repository\GSB\GSB\obj\Debug\GSB.csproj.GenerateResource.Cache
+F:\BTS 2\SLAM 3 - Tormento\Projet Campagne de sensibilisation de GSB\repository\GSB\GSB\obj\Debug\GSB.exe
+F:\BTS 2\SLAM 3 - Tormento\Projet Campagne de sensibilisation de GSB\repository\GSB\GSB\obj\Debug\GSB.pdb
