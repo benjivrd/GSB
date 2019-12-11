@@ -52,11 +52,46 @@
     <Compile Include="connexion.Designer.cs">
       <DependentUpon>connexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="mission1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mission1.Designer.cs">
+      <DependentUpon>mission1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mission2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mission2.Designer.cs">
+      <DependentUpon>mission2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mission3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mission3.Designer.cs">
+      <DependentUpon>mission3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="connexion.resx">
       <DependentUpon>connexion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mission1.resx">
+      <DependentUpon>mission1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mission2.resx">
+      <DependentUpon>mission2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mission3.resx">
+      <DependentUpon>mission3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\GSB.connexion.resources" />
+    <EmbeddedResource Include="obj\Debug\GSB.mission1.resources" />
+    <EmbeddedResource Include="obj\Debug\GSB.mission2.resources" />
+    <EmbeddedResource Include="obj\Debug\GSB.mission3.resources" />
+    <EmbeddedResource Include="obj\Debug\GSB.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,7 +100,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\GSB.exe.config" />
+    <None Include="bin\Debug\GSB.vshost.exe.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\GSB.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\GSB.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\GSB.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\GSB.csprojResolveAssemblyReference.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +122,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\GSB.exe" />
+    <Content Include="bin\Debug\GSB.pdb" />
+    <Content Include="bin\Debug\GSB.vshost.exe" />
+    <Content Include="obj\Debug\GSB.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\GSB.exe" />
+    <Content Include="obj\Debug\GSB.pdb" />
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

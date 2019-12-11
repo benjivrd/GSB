@@ -31,3 +31,5 @@ ComboBox : cb_
 Panel : pnl_
 PictureBox : pb_
 RadioButton : rb_
+TabControl : tc_
+TabPage : tp_
