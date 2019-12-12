@@ -52,6 +52,11 @@
             this.tp_action_ajouter = new System.Windows.Forms.TabPage();
             this.tp_action_consulter = new System.Windows.Forms.TabPage();
             this.tp_association_ajouter = new System.Windows.Forms.TabPage();
+            this.btn_association_ajouter_sub = new System.Windows.Forms.Button();
+            this.cb_association_ajouter_personne = new System.Windows.Forms.ComboBox();
+            this.cb_association_ajouter_pays = new System.Windows.Forms.ComboBox();
+            this.tb_association_ajouter_nom = new System.Windows.Forms.TextBox();
+            this.tb_association_ajouter_mission = new System.Windows.Forms.TextBox();
             this.tc_mission3 = new System.Windows.Forms.TabControl();
             this.tp_association_consulter = new System.Windows.Forms.TabPage();
             this.cb_association_modifier_pays = new System.Windows.Forms.ComboBox();
@@ -63,10 +68,13 @@
             this.btn_association_supprimer = new System.Windows.Forms.Button();
             this.btn_association_modifier = new System.Windows.Forms.Button();
             this.cb_association_recherche_type = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.tp_association_ajouter.SuspendLayout();
             this.tc_mission3.SuspendLayout();
             this.tp_association_consulter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_association)).BeginInit();
@@ -349,12 +357,80 @@
             // tp_association_ajouter
             // 
             this.tp_association_ajouter.BackColor = System.Drawing.Color.White;
+            this.tp_association_ajouter.Controls.Add(this.label3);
+            this.tp_association_ajouter.Controls.Add(this.label2);
+            this.tp_association_ajouter.Controls.Add(this.btn_association_ajouter_sub);
+            this.tp_association_ajouter.Controls.Add(this.cb_association_ajouter_personne);
+            this.tp_association_ajouter.Controls.Add(this.cb_association_ajouter_pays);
+            this.tp_association_ajouter.Controls.Add(this.tb_association_ajouter_nom);
+            this.tp_association_ajouter.Controls.Add(this.tb_association_ajouter_mission);
             this.tp_association_ajouter.Location = new System.Drawing.Point(4, 22);
             this.tp_association_ajouter.Name = "tp_association_ajouter";
             this.tp_association_ajouter.Padding = new System.Windows.Forms.Padding(3);
             this.tp_association_ajouter.Size = new System.Drawing.Size(892, 574);
             this.tp_association_ajouter.TabIndex = 1;
             this.tp_association_ajouter.Text = "Association A";
+            // 
+            // btn_association_ajouter_sub
+            // 
+            this.btn_association_ajouter_sub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
+            this.btn_association_ajouter_sub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_association_ajouter_sub.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_association_ajouter_sub.Location = new System.Drawing.Point(299, 425);
+            this.btn_association_ajouter_sub.Name = "btn_association_ajouter_sub";
+            this.btn_association_ajouter_sub.Size = new System.Drawing.Size(299, 59);
+            this.btn_association_ajouter_sub.TabIndex = 19;
+            this.btn_association_ajouter_sub.Text = "Ajouter";
+            this.btn_association_ajouter_sub.UseVisualStyleBackColor = true;
+            this.btn_association_ajouter_sub.Click += new System.EventHandler(this.btn_association_ajouter_sub_Click);
+            // 
+            // cb_association_ajouter_personne
+            // 
+            this.cb_association_ajouter_personne.DropDownHeight = 100;
+            this.cb_association_ajouter_personne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_association_ajouter_personne.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_association_ajouter_personne.FormattingEnabled = true;
+            this.cb_association_ajouter_personne.IntegralHeight = false;
+            this.cb_association_ajouter_personne.Location = new System.Drawing.Point(299, 341);
+            this.cb_association_ajouter_personne.Name = "cb_association_ajouter_personne";
+            this.cb_association_ajouter_personne.Size = new System.Drawing.Size(299, 28);
+            this.cb_association_ajouter_personne.TabIndex = 18;
+            this.cb_association_ajouter_personne.Click += new System.EventHandler(this.cb_association_ajouter_personne_Click);
+            // 
+            // cb_association_ajouter_pays
+            // 
+            this.cb_association_ajouter_pays.DropDownHeight = 100;
+            this.cb_association_ajouter_pays.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_association_ajouter_pays.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_association_ajouter_pays.FormattingEnabled = true;
+            this.cb_association_ajouter_pays.IntegralHeight = false;
+            this.cb_association_ajouter_pays.Location = new System.Drawing.Point(299, 258);
+            this.cb_association_ajouter_pays.Name = "cb_association_ajouter_pays";
+            this.cb_association_ajouter_pays.Size = new System.Drawing.Size(299, 28);
+            this.cb_association_ajouter_pays.TabIndex = 17;
+            this.cb_association_ajouter_pays.Click += new System.EventHandler(this.cb_association_ajouter_pays_Click);
+            // 
+            // tb_association_ajouter_nom
+            // 
+            this.tb_association_ajouter_nom.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.tb_association_ajouter_nom.Location = new System.Drawing.Point(299, 99);
+            this.tb_association_ajouter_nom.Name = "tb_association_ajouter_nom";
+            this.tb_association_ajouter_nom.Size = new System.Drawing.Size(299, 29);
+            this.tb_association_ajouter_nom.TabIndex = 4;
+            this.tb_association_ajouter_nom.Text = "Nom association";
+            this.tb_association_ajouter_nom.Enter += new System.EventHandler(this.tb_association_ajouter_nom_Enter);
+            this.tb_association_ajouter_nom.Leave += new System.EventHandler(this.tb_association_ajouter_nom_Leave);
+            // 
+            // tb_association_ajouter_mission
+            // 
+            this.tb_association_ajouter_mission.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.tb_association_ajouter_mission.Location = new System.Drawing.Point(299, 155);
+            this.tb_association_ajouter_mission.Name = "tb_association_ajouter_mission";
+            this.tb_association_ajouter_mission.Size = new System.Drawing.Size(299, 29);
+            this.tb_association_ajouter_mission.TabIndex = 3;
+            this.tb_association_ajouter_mission.Text = "Nom mission";
+            this.tb_association_ajouter_mission.Enter += new System.EventHandler(this.tb_association_ajouter_mission_Enter);
+            this.tb_association_ajouter_mission.Leave += new System.EventHandler(this.tb_association_ajouter_mission_Leave);
             // 
             // tc_mission3
             // 
@@ -524,6 +600,26 @@
             this.cb_association_recherche_type.Size = new System.Drawing.Size(563, 29);
             this.cb_association_recherche_type.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(295, 306);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Dirigeant";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(295, 220);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 20);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Pays";
+            // 
             // mission3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,6 +640,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tp_association_ajouter.ResumeLayout(false);
+            this.tp_association_ajouter.PerformLayout();
             this.tc_mission3.ResumeLayout(false);
             this.tp_association_consulter.ResumeLayout(false);
             this.tp_association_consulter.PerformLayout();
@@ -586,6 +684,13 @@
         private System.Windows.Forms.ComboBox cb_association_recherche_type;
         private System.Windows.Forms.ComboBox cb_association_modifier_nom_personne;
         private System.Windows.Forms.ComboBox cb_association_modifier_pays;
+        private System.Windows.Forms.Button btn_association_ajouter_sub;
+        private System.Windows.Forms.ComboBox cb_association_ajouter_personne;
+        private System.Windows.Forms.ComboBox cb_association_ajouter_pays;
+        private System.Windows.Forms.TextBox tb_association_ajouter_nom;
+        private System.Windows.Forms.TextBox tb_association_ajouter_mission;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 
       

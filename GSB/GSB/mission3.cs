@@ -50,7 +50,49 @@ namespace GSB
             btn_association_consulter_Click(objBtnAssoc, e); //Ouverture de l'onglet par défault
         }
 
-  
+        private void btn_association_ajouter_Click(object sender, EventArgs e)
+        {
+            tc_mission3.SelectedIndex = 1;
+            lb_titre.Text = "Ajout d'une association";
+        }
+
+        private void btn_action_consulter_Click(object sender, EventArgs e)
+        {
+            tc_mission3.SelectedIndex = 2;
+            lb_titre.Text = "Consultation des actions";
+        }
+
+        private void btn_action_ajouter_Click(object sender, EventArgs e)
+        {
+            tc_mission3.SelectedIndex = 3;
+            lb_titre.Text = "Ajout d'une action";
+        }
+
+        private void btn_partenariat_consulter_Click(object sender, EventArgs e)
+        {
+            tc_mission3.SelectedIndex = 4;
+            lb_titre.Text = "Consultation des partenariats";
+        }
+
+        private void btn_partenariat_ajouter_Click(object sender, EventArgs e)
+        {
+            tc_mission3.SelectedIndex = 5;
+            lb_titre.Text = "Ajout d'un partenariat";
+        }
+
+        private void btn_quitter_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_reduire_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+
+
+        //********************ASSOCIATION**************************************
 
         private void btn_association_consulter_Click(object sender, EventArgs e)
         {
@@ -76,46 +118,7 @@ namespace GSB
 
         }
 
-        private void btn_association_ajouter_Click(object sender, EventArgs e)
-        {  
-            tc_mission3.SelectedIndex = 1; 
-            lb_titre.Text = "Ajout d'une associations"; 
-        }
-
-        private void btn_action_consulter_Click(object sender, EventArgs e)
-        {
-            tc_mission3.SelectedIndex = 2;
-            lb_titre.Text = "Consultation des actions";
-        }
-
-        private void btn_action_ajouter_Click(object sender, EventArgs e)
-        {
-            tc_mission3.SelectedIndex = 3; 
-            lb_titre.Text = "Ajout d'une action";
-        }
-
-        private void btn_partenariat_consulter_Click(object sender, EventArgs e)
-        {
-            tc_mission3.SelectedIndex = 4;
-            lb_titre.Text = "Consultation des partenariats"; 
-        }
-
-        private void btn_partenariat_ajouter_Click(object sender, EventArgs e)
-        {
-           tc_mission3.SelectedIndex = 5; 
-           lb_titre.Text = "Ajout d'un partenariat"; 
-        }
-
-        private void btn_quitter_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btn_reduire_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
+        
         private void tb_association_recherche_nom_TextChanged(object sender, EventArgs e)
         {
 
@@ -208,7 +211,85 @@ namespace GSB
 
         private void btn_association_supprimer_Click(object sender, EventArgs e)
         {
-         
+
+            dt = bdd.obtenirNombreDeContratConcerneeParUneAssociation(this.tb_association_modifier_nom.Text);
+            int nbContrat = int.Parse(dt.Rows[0][0].ToString());
+            if (nbContrat == 0)
+            {
+                bdd.supprimerAssociation(this.tb_association_modifier_nom.Text);
+                MessageBox.Show("L'association " + tb_association_modifier_nom.Text + " à bien été supprimé.", "Suppression résussis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btn_association_consulter_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Vous ne pouvez pas supprimer cette association car un ou plusieurs contrats sont concernées par celle-ci.", "Suppression impossible", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_association_ajouter_sub_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bdd.ajouterAssociation(this.tb_association_ajouter_nom.Text,
+                    this.tb_association_ajouter_mission.Text,
+                    cb_association_ajouter_personne.SelectedIndex + 1,
+                    cb_association_ajouter_pays.SelectedIndex + 1);
+                MessageBox.Show("L'association " + tb_association_ajouter_nom.Text + " à bien été ajouté.", "Ajout résussis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex )
+            {
+                MessageBox.Show("Une erreur est survenue pour l'ajout d'une nouvelle association" + ex.Message , "Ajout impossible", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              
+                
+            }
+        }
+
+        private void cb_association_ajouter_personne_Click(object sender, EventArgs e)
+        {
+            dt = bdd.obtenirPersonne();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cb_association_ajouter_personne.Items.Add(dt.Rows[i][0].ToString() + "  " + dt.Rows[i][1].ToString());
+            }
+        }
+
+        private void cb_association_ajouter_pays_Click(object sender, EventArgs e)
+        {
+            dt = bdd.obtenirPays();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cb_association_ajouter_pays.Items.Add(dt.Rows[i][0].ToString());
+            }
+        }
+
+        private void tb_association_ajouter_nom_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tb_association_recherche_nom.Text))
+                tb_association_ajouter_nom.Text = "Nom association";
+        }
+
+        private void tb_association_ajouter_nom_Enter(object sender, EventArgs e)
+        {
+            if (tb_association_ajouter_nom.Text == "Nom association")
+            {
+                tb_association_ajouter_nom.Text = "";
+            }
+        }
+
+        private void tb_association_ajouter_mission_Leave(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(tb_association_ajouter_mission.Text))
+                tb_association_ajouter_mission.Text = "Nom mission";
+        }
+
+        private void tb_association_ajouter_mission_Enter(object sender, EventArgs e)
+        {
+
+            if (tb_association_ajouter_mission.Text == "Nom mission")
+            {
+                tb_association_ajouter_mission.Text = "";
+            }
         }
     }
 }

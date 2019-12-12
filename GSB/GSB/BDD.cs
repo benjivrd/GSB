@@ -389,7 +389,58 @@ namespace GSB
             }
         }
 
+        public DataTable obtenirNombreDeContratConcerneeParUneAssociation(string nom)
+        {
+            try
+            {
+                string req = "select count(id) from CONTRAT where id_association = (select id from ASSOCIATION where nom = @_nom)";
+                this.cde = new SqlCommand(req, cn);
+                this.cde.Parameters.Add("@_nom", SqlDbType.VarChar).Value = nom;
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
 
+                throw new Exception("Erreur : [ObtenirNbContratParAssociation] \n" + ex.Message);
+            }
+        }
+
+        public void supprimerAssociation(string nom)
+        {
+            try
+            {
+                string req = "delete from ASSOCIATION where nom=@_nom";
+                this.cde = new SqlCommand(req, cn);
+                this.cde.Parameters.Add("@_nom", SqlDbType.VarChar).Value = nom;
+                this.cde.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(" Erreur Suppr SqlServer \n" + ex.Message);
+            }
+        }
+
+        public void ajouterAssociation(string nom, string mission, int id_personne , int id_pays)
+        {
+            try
+            {
+                string req = "insert into ASSOCIATION(nom,mission,id_personne,id_pays) values(@_nom,@_mission,@_personne,@_pays)";
+                this.cde = new SqlCommand(req, cn);
+                this.cde.Parameters.Add("@_nom", SqlDbType.VarChar).Value = nom;
+                this.cde.Parameters.Add("@_mission", SqlDbType.VarChar).Value = mission;
+                this.cde.Parameters.Add("@_pays", SqlDbType.Int).Value = id_pays;
+                this.cde.Parameters.Add("@_personne", SqlDbType.Int).Value = id_personne;             
+                this.cde.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [ajouterrAssociation] \n" + ex.Message);
+            }
+        }
 
 
 
