@@ -59,6 +59,10 @@ namespace GSB
             }
         }
 
+
+        //***************************** MISSION 1 **************************************
+
+
         //***************************** AGENCE **************************************
 
         public DataTable obtenirAgences()
@@ -210,5 +214,184 @@ namespace GSB
                 throw new Exception(" Erreur Suppr SqlServer \n" + ex.Message);
             }
         }
+
+
+        //***************************** MISSION 3 **************************************
+
+        //***************************** ASSOCIATION **************************************
+
+        public DataTable obtenirAssociation()
+        {
+            try
+            {
+                String req = "select ASSOCIATION.nom, ASSOCIATION.mission,PAYS.nom,PERSONNE.nom,PERSONNE.prenom from ASSOCIATION inner join PERSONNE on ASSOCIATION.id_personne = PERSONNE.id inner join PAYS on ASSOCIATION.id_pays = PAYS.id ";
+                this.cde = new SqlCommand(req, cn);
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [obtenirAssociation] \n" + ex.Message);
+            }
+        }
+
+        public DataTable obtenirPays()
+        {
+            try
+            {
+                String req = "select PAYS.nom from PAYS ";
+                this.cde = new SqlCommand(req, cn);
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [obtenirPays] \n" + ex.Message);
+            }
+        }
+        public DataTable obtenirIdAssociationAvecNom(string nom)
+        {
+            try
+            {
+                String req = "select id from ASSOCIATION where nom = @_nom ";
+                this.cde = new SqlCommand(req, cn);
+                this.cde.Parameters.Add("@_nom", SqlDbType.VarChar).Value = nom;
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [obtenirPays] \n" + ex.Message);
+            }
+        }
+
+        
+
+        public DataTable obtenirPersonne()
+        {
+            try
+            {
+                String req = "select PERSONNE.nom,PERSONNE.prenom from PERSONNE ";
+                this.cde = new SqlCommand(req, cn);
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [obtenirPersonne] \n" + ex.Message);
+            }
+        }
+
+
+        public DataTable obtenirAssociationByPays(string pays)
+        {
+            try
+            {
+                String req = "select ASSOCIATION.nom, ASSOCIATION.mission,PAYS.nom,PERSONNE.nom,PERSONNE.prenom from ASSOCIATION inner join PERSONNE on ASSOCIATION.id_personne = PERSONNE.id inner join PAYS on ASSOCIATION.id_pays = PAYS.id where PAYS.nom like @_pays ";
+                this.cde = new SqlCommand(req, cn);
+                this.cde.Parameters.Add("@_pays", SqlDbType.VarChar).Value = "%" + pays + "%";
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [obtenirAssociationParPays] \n" + ex.Message);
+            }
+        }
+
+        public DataTable obtenirAssociationByNom(string nom)
+        {
+            try
+            {
+                String req = "select ASSOCIATION.nom, ASSOCIATION.mission,PAYS.nom,PERSONNE.nom,PERSONNE.prenom from ASSOCIATION inner join PERSONNE on ASSOCIATION.id_personne = PERSONNE.id inner join PAYS on ASSOCIATION.id_pays = PAYS.id where ASSOCIATION.nom like @_nom ";
+                this.cde = new SqlCommand(req, cn);
+                this.cde.Parameters.Add("@_nom", SqlDbType.VarChar).Value = "%" + nom + "%";
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [obtenirAssociationParNom] \n" + ex.Message);
+            }
+        }
+
+        public DataTable obtenirPersonneByNom(string nom)
+        {
+            try
+            {
+                String req = "select PERSONNE.id from PERSONNE  where PERSONNE.nom = @_nom";
+                this.cde = new SqlCommand(req, cn);
+                this.cde.Parameters.Add("@_nom", SqlDbType.VarChar).Value = nom;
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [obtenirPersonneByNom] \n" + ex.Message);
+            }
+        }
+        public DataTable obtenirPaysByNom(string nom)
+        {
+            try
+            {
+                String req = "select PAYS.id from PAYS  where PAYS.nom = @_nom";
+                this.cde = new SqlCommand(req, cn);
+                this.cde.Parameters.Add("@_nom", SqlDbType.VarChar).Value = nom;
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [obtenirPaysByNom] \n" + ex.Message);
+            }
+        }
+
+        public void modifierAssociation(string nom, string mission, int id_pays, int id_personne, int id)
+        {
+            try
+            {
+                string req = "update association set nom=@_nom, mission=@_mission, id_pays=@_pays, id_personne=@_personne where id=@_id";
+                this.cde = new SqlCommand(req, cn);
+                this.cde.Parameters.Add("@_nom", SqlDbType.VarChar).Value = nom;
+                this.cde.Parameters.Add("@_mission", SqlDbType.VarChar).Value = mission;
+                this.cde.Parameters.Add("@_pays", SqlDbType.Int).Value = id_pays ;
+                this.cde.Parameters.Add("@_personne", SqlDbType.Int).Value = id_personne;
+                this.cde.Parameters.Add("@_id", SqlDbType.Int).Value = id;
+                this.cde.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [modifierAssociation] \n" + ex.Message);
+            }
+        }
+
+
+
+
+
     }
 }
