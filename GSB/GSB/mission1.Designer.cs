@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mission1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_artiste_reservation = new System.Windows.Forms.Button();
             this.btn_artiste_ajouter = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@
             this.btn_quitter = new System.Windows.Forms.Button();
             this.tc_mission1 = new System.Windows.Forms.TabControl();
             this.tp_agence_consulter = new System.Windows.Forms.TabPage();
+            this.tb_agence_modifier_type = new System.Windows.Forms.TextBox();
             this.btn_agence_supprimer = new System.Windows.Forms.Button();
             this.btn_agence_modifier = new System.Windows.Forms.Button();
             this.tb_agence_modifier_ville = new System.Windows.Forms.TextBox();
@@ -79,7 +81,6 @@
             this.tp_artiste_consulter = new System.Windows.Forms.TabPage();
             this.tp_artiste_ajouter = new System.Windows.Forms.TabPage();
             this.tp_artiste_reservation = new System.Windows.Forms.TabPage();
-            this.tb_agence_modifier_type = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -514,6 +515,15 @@
             this.tp_agence_consulter.TabIndex = 0;
             this.tp_agence_consulter.Text = "Agence C";
             // 
+            // tb_agence_modifier_type
+            // 
+            this.tb_agence_modifier_type.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_agence_modifier_type.Location = new System.Drawing.Point(391, 440);
+            this.tb_agence_modifier_type.Name = "tb_agence_modifier_type";
+            this.tb_agence_modifier_type.Size = new System.Drawing.Size(379, 26);
+            this.tb_agence_modifier_type.TabIndex = 14;
+            this.tb_agence_modifier_type.Text = "Type";
+            // 
             // btn_agence_supprimer
             // 
             this.btn_agence_supprimer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
@@ -639,24 +649,24 @@
             this.dgv_agence.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_agence.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_agence.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_agence.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_agence.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_agence.ColumnHeadersHeight = 25;
             this.dgv_agence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_agence.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_agence.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_agence.EnableHeadersVisualStyles = false;
             this.dgv_agence.GridColor = System.Drawing.Color.White;
             this.dgv_agence.Location = new System.Drawing.Point(6, 41);
@@ -775,15 +785,6 @@
             this.tp_artiste_reservation.TabIndex = 11;
             this.tp_artiste_reservation.Text = "Artiste R";
             // 
-            // tb_agence_modifier_type
-            // 
-            this.tb_agence_modifier_type.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_agence_modifier_type.Location = new System.Drawing.Point(391, 440);
-            this.tb_agence_modifier_type.Name = "tb_agence_modifier_type";
-            this.tb_agence_modifier_type.Size = new System.Drawing.Size(379, 26);
-            this.tb_agence_modifier_type.TabIndex = 14;
-            this.tb_agence_modifier_type.Text = "Type";
-            // 
             // mission1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -794,6 +795,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mission1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mission1";
