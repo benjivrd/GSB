@@ -63,8 +63,8 @@ namespace GSB
             this.dgv_association.DataMember = dt.TableName;
             this.dgv_association.AutoGenerateColumns = true;
             this.dgv_association.Columns["nom1"].HeaderText = "pays";
-            this.dgv_association.Columns["nom2"].HeaderText = "nom du dirigant";
-            this.dgv_association.Columns["prenom"].HeaderText = "prenom du dirigant";
+            this.dgv_association.Columns["nom2"].HeaderText = "nom du dirigeant";
+            this.dgv_association.Columns["prenom"].HeaderText = "prenom du dirigeant";
             this.dgv_association.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             this.dgv_association.Refresh();
             dgv_association.Rows[0].Selected = false;
