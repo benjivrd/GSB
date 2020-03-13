@@ -40,7 +40,7 @@ namespace GSB
             {
                 tab.Text = "";
             }
-    
+
         }
 
         private void mission3_Load(object sender, EventArgs e)
@@ -54,12 +54,6 @@ namespace GSB
         {
             tc_mission3.SelectedIndex = 1;
             lb_titre.Text = "Ajout d'une association";
-        }
-
-        private void btn_action_consulter_Click(object sender, EventArgs e)
-        {
-            tc_mission3.SelectedIndex = 2;
-            lb_titre.Text = "Consultation des actions";
         }
 
         private void btn_action_ajouter_Click(object sender, EventArgs e)
@@ -92,11 +86,11 @@ namespace GSB
 
 
 
-        //********************ASSOCIATION**************************************
+        //********************ASSOCIATION**************************************\\
 
         private void btn_association_consulter_Click(object sender, EventArgs e)
         {
-           
+
             tc_mission3.SelectedIndex = 0; // Ouverture de l'onglet
             lb_titre.Text = "Consultation des associations"; // Changement du titre
             // Remplissage du DataGridView
@@ -110,7 +104,7 @@ namespace GSB
             this.dgv_association.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             this.dgv_association.Refresh();
             dgv_association.Rows[0].Selected = false;
-            
+
             cb_association_recherche_type.Items.Clear();
             cb_association_recherche_type.Items.Add("Par nom");
             cb_association_recherche_type.Items.Add("Par pays");
@@ -118,7 +112,7 @@ namespace GSB
 
         }
 
-        
+
         private void tb_association_recherche_nom_TextChanged(object sender, EventArgs e)
         {
 
@@ -133,7 +127,7 @@ namespace GSB
                 {
                     dt = bdd.obtenirAssociationByNom(tb_association_recherche_nom.Text);
                 }
-                
+
                 if (dt.Rows.Count > 0)
                 {
                     this.dgv_association.DataSource = dt;
@@ -144,9 +138,9 @@ namespace GSB
                 }
                 else
                 {
-                    var dt = dgv_association.DataSource as DataTable;
+                    var dtb = dgv_association.DataSource as DataTable;
                     dt.Rows.Clear();
-                    dgv_association.DataSource = dt;
+                    dgv_association.DataSource = dtb;
                 }
             }
         }
@@ -159,7 +153,7 @@ namespace GSB
 
         private void tb_association_recherche_nom_Enter(object sender, EventArgs e)
         {
-           
+
             if (tb_association_recherche_nom.Text == "Rechercher une association")
             {
                 tb_association_recherche_nom.Text = "";
@@ -176,11 +170,11 @@ namespace GSB
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cb_association_modifier_pays.Items.Add(dt.Rows[i][0].ToString());
-             
+
             }
             this.cb_association_modifier_pays.Text = this.dgv_association[2, noLigne].Value.ToString();
-       
-          
+
+
             dt2 = bdd.obtenirPersonne();
             for (int i = 0; i < dt2.Rows.Count; i++)
             {
@@ -191,9 +185,9 @@ namespace GSB
 
         }
 
-        private void btn_association_modifier_Click(object sender,EventArgs e)
+        private void btn_association_modifier_Click(object sender, EventArgs e)
         {
-            
+
             int selectedRowsIndex = this.dgv_association.CurrentCell.RowIndex;
             dt = bdd.obtenirPaysByNom(cb_association_modifier_pays.Text);
             dt2 = bdd.obtenirPersonneByNom(cb_association_modifier_nom_personne.Text);
@@ -236,11 +230,11 @@ namespace GSB
                     cb_association_ajouter_pays.SelectedIndex + 1);
                 MessageBox.Show("L'association " + tb_association_ajouter_nom.Text + " à bien été ajouté.", "Ajout résussis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
-                MessageBox.Show("Une erreur est survenue pour l'ajout d'une nouvelle association" + ex.Message , "Ajout impossible", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              
-                
+                MessageBox.Show("Une erreur est survenue pour l'ajout d'une nouvelle association" + ex.Message, "Ajout impossible", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
             }
         }
 
@@ -291,5 +285,73 @@ namespace GSB
                 tb_association_ajouter_mission.Text = "";
             }
         }
+
+
+        //********************ACTION**************************************\\
+
+
+
+        private void btn_action_consulter_Click(object sender, EventArgs e)
+        {
+            tc_mission3.SelectedIndex = 2;
+            lb_titre.Text = "Consultation des actions";
+            dt = bdd.obtenirAction();
+            this.dgv_action.DataSource = dt;
+            this.dgv_action.DataMember = dt.TableName;
+            this.dgv_action.AutoGenerateColumns = true;
+            this.dgv_action.Columns["nom"].HeaderText = "pays";
+            this.dgv_action.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            this.dgv_action.Refresh();
+            dgv_action.Rows[0].Selected = false;
+
+            cb_action_recherche_type.Items.Clear();
+            cb_action_recherche_type.Items.Add("Par nom");
+            cb_action_recherche_type.Items.Add("Par pays");
+            cb_action_recherche_type.Items.Add("Par annee");
+            cb_action_recherche_type.SelectedIndex = 0;
+        }
+
+        private void btn_action_supprimer_Click(object sender, EventArgs e)
+        {
+             bdd.supprimerAction(this.tb_action_modifier_id.Text,this.cb_action_modifier_annee.Text);
+             MessageBox.Show("L'action  " + tb_action_modifier_nom.Text + " à bien été supprimé.", "Suppression résussis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             btn_association_consulter_Click(sender, e);  
+            
+        }
+
+        private void btn_action_modifier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_action_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int noLigne = e.RowIndex;
+            this.dgv_action.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.tb_action_modifier_nom.Text = this.dgv_action[1, noLigne].Value.ToString();
+            this.tb_action_modifier_desc.Text = this.dgv_action[4, noLigne].Value.ToString();
+            this.tb_action_modifier_id.Text = this.dgv_action[0, noLigne].Value.ToString();
+            dt = bdd.obtenirPays();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cb_action_modifier_pays.Items.Add(dt.Rows[i][0].ToString());
+
+            }
+            this.cb_action_modifier_pays.Text = this.dgv_action[3, noLigne].Value.ToString();
+
+            dt = bdd.obtenirAnnee();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cb_action_modifier_annee.Items.Add(dt.Rows[i][0].ToString());
+
+            }
+            this.cb_action_modifier_annee.Text = this.dgv_action[2, noLigne].Value.ToString();
+
+
+        }
+
+
+
+
     }
 }

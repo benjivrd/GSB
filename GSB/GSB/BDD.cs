@@ -442,6 +442,64 @@ namespace GSB
             }
         }
 
+        //************************ACTION********************\\
+
+        public DataTable obtenirAction()
+        {
+            try
+            {
+                String req = "SELECT ACTION.id, ACTION.libelle, ACTION_PAYS_ANNEE.annee, PAYS.nom, ACTION.description FROM ACTION INNER JOIN ACTION_PAYS_ANNEE on ACTION.id = ACTION_PAYS_ANNEE.id_action INNER JOIN PAYS on ACTION_PAYS_ANNEE.id_pays = PAYS.id ";
+                this.cde = new SqlCommand(req, cn);
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [obtenirAction] \n" + ex.Message);
+            }
+        }
+
+        public DataTable obtenirAnnee()
+        {
+            try
+            {
+                String req = "SELECT * FROM ANNEE";
+                this.cde = new SqlCommand(req, cn);
+                da = new SqlDataAdapter();
+                da.SelectCommand = this.cde;
+                dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur : [obtenirAnnee] \n" + ex.Message);
+            }
+        }
+
+
+        public void supprimerAction(string id, string annee)
+        {
+            try
+            {
+                string req = "delete from ACTION INNER JOIN ACTION_PAYS_ANNEE on ACTION.id = ACTION_PAYS_ANNEE.id_action where ACTION.id = @_id and ACTION_PAYS_ANNEE = @_annee";
+                this.cde = new SqlCommand(req, cn);
+                this.cde.Parameters.Add("@_id", SqlDbType.Int).Value = id;
+                this.cde.Parameters.Add("@_annee", SqlDbType.VarChar).Value = annee;
+                this.cde.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(" Erreur Suppr SqlServer \n" + ex.Message);
+            }
+        }
+
+
+
+
 
 
     }

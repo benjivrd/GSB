@@ -235,9 +235,9 @@ namespace GSB
                     this.dgv_agence.Rows[0].Selected = false;
                 }
                 else{
-                    var dt = dgv_agence.DataSource as DataTable;
+                    var dtb = dgv_agence.DataSource as DataTable;
                     dt.Rows.Clear();
-                    dgv_agence.DataSource = dt;
+                    dgv_agence.DataSource = dtb;
                 }
             }
         }

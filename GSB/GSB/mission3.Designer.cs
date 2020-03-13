@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mission3));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_partenariat_ajouter = new System.Windows.Forms.Button();
@@ -50,8 +52,14 @@
             this.tp_partenariat_ajouter = new System.Windows.Forms.TabPage();
             this.tp_partenariat_consulter = new System.Windows.Forms.TabPage();
             this.tp_action_ajouter = new System.Windows.Forms.TabPage();
-            this.tp_action_consulter = new System.Windows.Forms.TabPage();
+            this.tb_action_modifier_libelle = new System.Windows.Forms.TabPage();
+            this.tb_action_modifier_nom = new System.Windows.Forms.TextBox();
+            this.dgv_action = new System.Windows.Forms.DataGridView();
+            this.cb_action_recherche_type = new System.Windows.Forms.ComboBox();
+            this.tb_action_recherche_nom = new System.Windows.Forms.TextBox();
             this.tp_association_ajouter = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btn_association_ajouter_sub = new System.Windows.Forms.Button();
             this.cb_association_ajouter_personne = new System.Windows.Forms.ComboBox();
             this.cb_association_ajouter_pays = new System.Windows.Forms.ComboBox();
@@ -68,12 +76,18 @@
             this.btn_association_supprimer = new System.Windows.Forms.Button();
             this.btn_association_modifier = new System.Windows.Forms.Button();
             this.cb_association_recherche_type = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tb_action_modifier_desc = new System.Windows.Forms.TextBox();
+            this.btn_action_supprimer = new System.Windows.Forms.Button();
+            this.btn_action_modifier = new System.Windows.Forms.Button();
+            this.cb_action_modifier_pays = new System.Windows.Forms.ComboBox();
+            this.tb_action_modifier_id = new System.Windows.Forms.TextBox();
+            this.cb_action_modifier_annee = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.tb_action_modifier_libelle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_action)).BeginInit();
             this.tp_association_ajouter.SuspendLayout();
             this.tc_mission3.SuspendLayout();
             this.tp_association_consulter.SuspendLayout();
@@ -83,6 +97,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(65)))), ((int)(((byte)(79)))));
+            this.panel1.Controls.Add(this.tb_action_modifier_id);
             this.panel1.Controls.Add(this.btn_partenariat_ajouter);
             this.panel1.Controls.Add(this.btn_partenariat_consulter);
             this.panel1.Controls.Add(this.btn_partenariat);
@@ -345,14 +360,95 @@
             this.tp_action_ajouter.TabIndex = 3;
             this.tp_action_ajouter.Text = "Action A";
             // 
-            // tp_action_consulter
+            // tb_action_modifier_libelle
             // 
-            this.tp_action_consulter.BackColor = System.Drawing.Color.White;
-            this.tp_action_consulter.Location = new System.Drawing.Point(4, 22);
-            this.tp_action_consulter.Name = "tp_action_consulter";
-            this.tp_action_consulter.Size = new System.Drawing.Size(892, 574);
-            this.tp_action_consulter.TabIndex = 2;
-            this.tp_action_consulter.Text = "Action C";
+            this.tb_action_modifier_libelle.BackColor = System.Drawing.Color.White;
+            this.tb_action_modifier_libelle.Controls.Add(this.cb_action_modifier_annee);
+            this.tb_action_modifier_libelle.Controls.Add(this.cb_action_modifier_pays);
+            this.tb_action_modifier_libelle.Controls.Add(this.btn_action_modifier);
+            this.tb_action_modifier_libelle.Controls.Add(this.btn_action_supprimer);
+            this.tb_action_modifier_libelle.Controls.Add(this.tb_action_modifier_desc);
+            this.tb_action_modifier_libelle.Controls.Add(this.tb_action_modifier_nom);
+            this.tb_action_modifier_libelle.Controls.Add(this.dgv_action);
+            this.tb_action_modifier_libelle.Controls.Add(this.cb_action_recherche_type);
+            this.tb_action_modifier_libelle.Controls.Add(this.tb_action_recherche_nom);
+            this.tb_action_modifier_libelle.Location = new System.Drawing.Point(4, 22);
+            this.tb_action_modifier_libelle.Name = "tb_action_modifier_libelle";
+            this.tb_action_modifier_libelle.Size = new System.Drawing.Size(892, 574);
+            this.tb_action_modifier_libelle.TabIndex = 2;
+            this.tb_action_modifier_libelle.Text = "Action C";
+            // 
+            // tb_action_modifier_nom
+            // 
+            this.tb_action_modifier_nom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_action_modifier_nom.Location = new System.Drawing.Point(22, 447);
+            this.tb_action_modifier_nom.Name = "tb_action_modifier_nom";
+            this.tb_action_modifier_nom.Size = new System.Drawing.Size(421, 26);
+            this.tb_action_modifier_nom.TabIndex = 15;
+            // 
+            // dgv_action
+            // 
+            this.dgv_action.AllowUserToAddRows = false;
+            this.dgv_action.AllowUserToDeleteRows = false;
+            this.dgv_action.AllowUserToResizeColumns = false;
+            this.dgv_action.AllowUserToResizeRows = false;
+            this.dgv_action.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_action.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_action.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_action.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_action.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_action.ColumnHeadersHeight = 25;
+            this.dgv_action.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_action.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_action.EnableHeadersVisualStyles = false;
+            this.dgv_action.Location = new System.Drawing.Point(9, 49);
+            this.dgv_action.Name = "dgv_action";
+            this.dgv_action.ReadOnly = true;
+            this.dgv_action.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_action.RowHeadersVisible = false;
+            this.dgv_action.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_action.ShowCellErrors = false;
+            this.dgv_action.ShowCellToolTips = false;
+            this.dgv_action.ShowEditingIcon = false;
+            this.dgv_action.ShowRowErrors = false;
+            this.dgv_action.Size = new System.Drawing.Size(880, 393);
+            this.dgv_action.TabIndex = 5;
+            this.dgv_action.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_action_RowEnter);
+            // 
+            // cb_action_recherche_type
+            // 
+            this.cb_action_recherche_type.BackColor = System.Drawing.Color.White;
+            this.cb_action_recherche_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_action_recherche_type.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_action_recherche_type.FormattingEnabled = true;
+            this.cb_action_recherche_type.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cb_action_recherche_type.Location = new System.Drawing.Point(326, 14);
+            this.cb_action_recherche_type.MaxDropDownItems = 20;
+            this.cb_action_recherche_type.Name = "cb_action_recherche_type";
+            this.cb_action_recherche_type.Size = new System.Drawing.Size(563, 29);
+            this.cb_action_recherche_type.TabIndex = 4;
+            // 
+            // tb_action_recherche_nom
+            // 
+            this.tb_action_recherche_nom.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.tb_action_recherche_nom.Location = new System.Drawing.Point(9, 14);
+            this.tb_action_recherche_nom.Name = "tb_action_recherche_nom";
+            this.tb_action_recherche_nom.Size = new System.Drawing.Size(311, 29);
+            this.tb_action_recherche_nom.TabIndex = 3;
             // 
             // tp_association_ajouter
             // 
@@ -370,6 +466,26 @@
             this.tp_association_ajouter.Size = new System.Drawing.Size(892, 574);
             this.tp_association_ajouter.TabIndex = 1;
             this.tp_association_ajouter.Text = "Association A";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(295, 220);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 20);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Pays";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(295, 306);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Dirigeant";
             // 
             // btn_association_ajouter_sub
             // 
@@ -436,7 +552,7 @@
             // 
             this.tc_mission3.Controls.Add(this.tp_association_consulter);
             this.tc_mission3.Controls.Add(this.tp_association_ajouter);
-            this.tc_mission3.Controls.Add(this.tp_action_consulter);
+            this.tc_mission3.Controls.Add(this.tb_action_modifier_libelle);
             this.tc_mission3.Controls.Add(this.tp_action_ajouter);
             this.tc_mission3.Controls.Add(this.tp_partenariat_consulter);
             this.tc_mission3.Controls.Add(this.tp_partenariat_ajouter);
@@ -528,26 +644,26 @@
             this.dgv_association.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_association.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_association.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_association.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_association.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_association.ColumnHeadersHeight = 25;
             this.dgv_association.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_association.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(192)))), ((int)(((byte)(203)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_association.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_association.EnableHeadersVisualStyles = false;
-            this.dgv_association.Location = new System.Drawing.Point(10, 41);
+            this.dgv_association.Location = new System.Drawing.Point(2, 41);
             this.dgv_association.Name = "dgv_association";
             this.dgv_association.ReadOnly = true;
             this.dgv_association.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -600,25 +716,72 @@
             this.cb_association_recherche_type.Size = new System.Drawing.Size(563, 29);
             this.cb_association_recherche_type.TabIndex = 1;
             // 
-            // label2
+            // tb_action_modifier_desc
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(295, 306);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Dirigeant";
+            this.tb_action_modifier_desc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_action_modifier_desc.Location = new System.Drawing.Point(22, 478);
+            this.tb_action_modifier_desc.Name = "tb_action_modifier_desc";
+            this.tb_action_modifier_desc.Size = new System.Drawing.Size(421, 26);
+            this.tb_action_modifier_desc.TabIndex = 16;
             // 
-            // label3
+            // btn_action_supprimer
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(295, 220);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 20);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Pays";
+            this.btn_action_supprimer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_action_supprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_action_supprimer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_action_supprimer.Location = new System.Drawing.Point(463, 511);
+            this.btn_action_supprimer.Name = "btn_action_supprimer";
+            this.btn_action_supprimer.Size = new System.Drawing.Size(423, 60);
+            this.btn_action_supprimer.TabIndex = 17;
+            this.btn_action_supprimer.Text = "Supprimer";
+            this.btn_action_supprimer.UseVisualStyleBackColor = true;
+            this.btn_action_supprimer.Click += new System.EventHandler(this.btn_action_supprimer_Click);
+            // 
+            // btn_action_modifier
+            // 
+            this.btn_action_modifier.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_action_modifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_action_modifier.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_action_modifier.Location = new System.Drawing.Point(463, 448);
+            this.btn_action_modifier.Name = "btn_action_modifier";
+            this.btn_action_modifier.Size = new System.Drawing.Size(421, 59);
+            this.btn_action_modifier.TabIndex = 18;
+            this.btn_action_modifier.Text = "Modifier";
+            this.btn_action_modifier.UseVisualStyleBackColor = true;
+            this.btn_action_modifier.Click += new System.EventHandler(this.btn_action_modifier_Click);
+            // 
+            // cb_action_modifier_pays
+            // 
+            this.cb_action_modifier_pays.DropDownHeight = 100;
+            this.cb_action_modifier_pays.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_action_modifier_pays.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_action_modifier_pays.FormattingEnabled = true;
+            this.cb_action_modifier_pays.IntegralHeight = false;
+            this.cb_action_modifier_pays.Location = new System.Drawing.Point(22, 508);
+            this.cb_action_modifier_pays.Name = "cb_action_modifier_pays";
+            this.cb_action_modifier_pays.Size = new System.Drawing.Size(421, 28);
+            this.cb_action_modifier_pays.TabIndex = 19;
+            // 
+            // tb_action_modifier_id
+            // 
+            this.tb_action_modifier_id.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_action_modifier_id.Location = new System.Drawing.Point(135, 570);
+            this.tb_action_modifier_id.Name = "tb_action_modifier_id";
+            this.tb_action_modifier_id.Size = new System.Drawing.Size(59, 26);
+            this.tb_action_modifier_id.TabIndex = 20;
+            this.tb_action_modifier_id.Visible = false;
+            // 
+            // cb_action_modifier_annee
+            // 
+            this.cb_action_modifier_annee.DropDownHeight = 100;
+            this.cb_action_modifier_annee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_action_modifier_annee.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_action_modifier_annee.FormattingEnabled = true;
+            this.cb_action_modifier_annee.IntegralHeight = false;
+            this.cb_action_modifier_annee.Location = new System.Drawing.Point(22, 541);
+            this.cb_action_modifier_annee.Name = "cb_action_modifier_annee";
+            this.cb_action_modifier_annee.Size = new System.Drawing.Size(421, 28);
+            this.cb_action_modifier_annee.TabIndex = 20;
             // 
             // mission3
             // 
@@ -636,10 +799,14 @@
             this.Text = "mission1";
             this.Load += new System.EventHandler(this.mission3_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tb_action_modifier_libelle.ResumeLayout(false);
+            this.tb_action_modifier_libelle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_action)).EndInit();
             this.tp_association_ajouter.ResumeLayout(false);
             this.tp_association_ajouter.PerformLayout();
             this.tc_mission3.ResumeLayout(false);
@@ -671,7 +838,7 @@
         private System.Windows.Forms.TabPage tp_partenariat_ajouter;
         private System.Windows.Forms.TabPage tp_partenariat_consulter;
         private System.Windows.Forms.TabPage tp_action_ajouter;
-        private System.Windows.Forms.TabPage tp_action_consulter;
+        private System.Windows.Forms.TabPage tb_action_modifier_libelle;
         private System.Windows.Forms.TabPage tp_association_ajouter;
         private System.Windows.Forms.TabControl tc_mission3;
         private System.Windows.Forms.TabPage tp_association_consulter;
@@ -691,6 +858,16 @@
         private System.Windows.Forms.TextBox tb_association_ajouter_mission;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgv_action;
+        private System.Windows.Forms.ComboBox cb_action_recherche_type;
+        private System.Windows.Forms.TextBox tb_action_recherche_nom;
+        private System.Windows.Forms.TextBox tb_action_modifier_nom;
+        private System.Windows.Forms.Button btn_action_supprimer;
+        private System.Windows.Forms.TextBox tb_action_modifier_desc;
+        private System.Windows.Forms.Button btn_action_modifier;
+        private System.Windows.Forms.ComboBox cb_action_modifier_pays;
+        private System.Windows.Forms.TextBox tb_action_modifier_id;
+        private System.Windows.Forms.ComboBox cb_action_modifier_annee;
     }
 
       

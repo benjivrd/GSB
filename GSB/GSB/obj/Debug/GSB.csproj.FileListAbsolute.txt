@@ -1,26 +1,12 @@
-C:\Users\PAC\Documents\GSB\GSB\GSB\bin\Debug\GSB.exe.config
-C:\Users\PAC\Documents\GSB\GSB\GSB\bin\Debug\GSB.exe
-C:\Users\PAC\Documents\GSB\GSB\GSB\bin\Debug\GSB.pdb
-C:\Users\PAC\Documents\GSB\GSB\GSB\obj\Debug\GSB.csprojAssemblyReference.cache
-C:\Users\PAC\Documents\GSB\GSB\GSB\obj\Debug\GSB.connexion.resources
-C:\Users\PAC\Documents\GSB\GSB\GSB\obj\Debug\GSB.mission1.resources
-C:\Users\PAC\Documents\GSB\GSB\GSB\obj\Debug\GSB.mission2.resources
-C:\Users\PAC\Documents\GSB\GSB\GSB\obj\Debug\GSB.mission3.resources
-C:\Users\PAC\Documents\GSB\GSB\GSB\obj\Debug\GSB.Properties.Resources.resources
-C:\Users\PAC\Documents\GSB\GSB\GSB\obj\Debug\GSB.csproj.GenerateResource.cache
-C:\Users\PAC\Documents\GSB\GSB\GSB\obj\Debug\GSB.csproj.CoreCompileInputs.cache
-C:\Users\PAC\Documents\GSB\GSB\GSB\obj\Debug\GSB.exe
-C:\Users\PAC\Documents\GSB\GSB\GSB\obj\Debug\GSB.pdb
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\bin\Debug\GSB.exe.config
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\bin\Debug\GSB.exe
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\bin\Debug\GSB.pdb
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\obj\Debug\GSB.csprojAssemblyReference.cache
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\obj\Debug\GSB.connexion.resources
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\obj\Debug\GSB.mission1.resources
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\obj\Debug\GSB.mission2.resources
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\obj\Debug\GSB.mission3.resources
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\obj\Debug\GSB.Properties.Resources.resources
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\obj\Debug\GSB.csproj.GenerateResource.cache
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\obj\Debug\GSB.csproj.CoreCompileInputs.cache
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\obj\Debug\GSB.exe
-C:\Users\test\Desktop\GSB CODE SOURCE\GSB\GSB\GSB\obj\Debug\GSB.pdb
+Z:\2TSSL\PPE 3\src\GSB\GSB\bin\Debug\GSB.exe.config
+Z:\2TSSL\PPE 3\src\GSB\GSB\bin\Debug\GSB.exe
+Z:\2TSSL\PPE 3\src\GSB\GSB\bin\Debug\GSB.pdb
+Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.connexion.resources
+Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.mission1.resources
+Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.mission2.resources
+Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.mission3.resources
+Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.Properties.Resources.resources
+Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.csproj.GenerateResource.Cache
+Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.exe
+Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.pdb
+Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.csprojResolveAssemblyReference.cache
