@@ -61,9 +61,7 @@ namespace GSB
 
 
         //***************************** MISSION 1 **************************************
-
-
-        //***************************** AGENCE **************************************
+        //****************************** AGENCE ****************************************
 
         public DataTable obtenirAgences()
         {
@@ -215,9 +213,28 @@ namespace GSB
             }
         }
 
+        //****************************** ÉVÉNEMENT ****************************************
 
-        //***************************** MISSION 3 **************************************
+        public DataTable obtenirEvenements()
+        {
+         try
+         {
+          String req = "select * from EVENEMENT";
+          this.cde = new SqlCommand(req, cn);
+          da = new SqlDataAdapter();
+          da.SelectCommand = this.cde;
+          dt = new DataTable();
+          da.Fill(dt);
+          return dt;
+         }
+         catch (Exception ex)
+         {
+          throw new Exception("Erreur : [obtenirEvenements] \n" + ex.Message);
+         }
+        }
 
+
+        //****************************** MISSION 3 ***************************************
         //***************************** ASSOCIATION **************************************
 
         public DataTable obtenirAssociation()

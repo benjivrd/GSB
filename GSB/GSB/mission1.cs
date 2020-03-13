@@ -100,7 +100,6 @@ namespace GSB
                 cb_agence_recherche_type.Items.Add(dt.Rows[i][0].ToString());
             }
             cb_agence_recherche_type.SelectedIndex = 0;
-            
         }
 
         private void btn_agence_ajouter_Click(object sender, EventArgs e)
@@ -129,10 +128,19 @@ namespace GSB
 
         private void btn_evenement_consulter_Click(object sender, EventArgs e)
         {
+            // Sélection permanente du bouton
             Button senderBtn = sender as Button;
             selectionBouton(senderBtn);
             tc_mission1.SelectedIndex = 4;
             lb_titre.Text = "Consultation des événements";
+            // Remplissage du DataGridView
+            dt = bdd.obtenirEvenements();
+            this.dgv_evenement.DataSource = dt;
+            this.dgv_evenement.DataMember = dt.TableName;
+            this.dgv_evenement.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            this.dgv_evenement.Refresh();
+            dgv_evenement.Rows[0].Selected = false;
+            
         }
 
         private void btn_evenement_ajouter_Click(object sender, EventArgs e)
@@ -286,5 +294,9 @@ namespace GSB
                 MessageBox.Show("Vous ne pouvez pas supprimer cette agence car une ou plusieurs campagnes sont concernées par celle-ci.", "Suppression impossible", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        //***************************** ÉVÉNEMENT **************************************
+
+        
     }
 }

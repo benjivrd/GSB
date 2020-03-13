@@ -10,3 +10,15 @@ Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.csproj.GenerateResource.Cache
 Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.exe
 Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.pdb
 Z:\2TSSL\PPE 3\src\GSB\GSB\obj\Debug\GSB.csprojResolveAssemblyReference.cache
+Z:\GSB\GSB\GSB\GSB\bin\Debug\GSB.exe.config
+Z:\GSB\GSB\GSB\GSB\obj\Debug\GSB.exe
+Z:\GSB\GSB\GSB\GSB\obj\Debug\GSB.pdb
+Z:\GSB\GSB\GSB\GSB\bin\Debug\GSB.exe
+Z:\GSB\GSB\GSB\GSB\bin\Debug\GSB.pdb
+Z:\GSB\GSB\GSB\GSB\obj\Debug\GSB.csprojResolveAssemblyReference.cache
+Z:\GSB\GSB\GSB\GSB\obj\Debug\GSB.connexion.resources
+Z:\GSB\GSB\GSB\GSB\obj\Debug\GSB.mission1.resources
+Z:\GSB\GSB\GSB\GSB\obj\Debug\GSB.mission2.resources
+Z:\GSB\GSB\GSB\GSB\obj\Debug\GSB.mission3.resources
+Z:\GSB\GSB\GSB\GSB\obj\Debug\GSB.Properties.Resources.resources
+Z:\GSB\GSB\GSB\GSB\obj\Debug\GSB.csproj.GenerateResource.Cache
